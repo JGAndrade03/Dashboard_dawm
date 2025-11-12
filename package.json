@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://<JGAndrade03>.github.io/Dashboard_dawm",
+  "homepage": "https://JGAndrade03.github.io/Dashboard_dawm",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
