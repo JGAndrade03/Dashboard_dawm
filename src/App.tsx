@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { Grid } from '@mui/material';
 import HeaderUI from './components/HeaderUI';
 import AlertUI from './components/AlertUI';
+import Select, { type SelectChangeEvent } from '@mui/material/Select';
 import './App.css'
+import SelectorUI from './components/SelectorUI';
 
 function App() {
   const [] = useState(0)
@@ -12,7 +14,7 @@ function App() {
     <Grid container spacing={5} justifyContent="center" alignItems="center">
 
          {/* Encabezado */}
-         <Grid size={{xs: 12, md: 12}}>Elemento: Encabezado <HeaderUI/> </Grid>
+         <Grid size={{xs: 12, md: 12}}><HeaderUI/> </Grid>
          
 
          {/* Alertas */}
@@ -21,7 +23,7 @@ function App() {
              <AlertUI description="No se preveen lluvias"/>Elemento: Alertas</Grid>
 
          {/* Selector */}
-         <Grid size= {{ xs: 12, md: 3}}>Elemento: Selector</Grid>
+         <Grid size= {{ xs: 12, md: 3}}><SelectorUI></SelectorUI></Grid>
 
          {/* Indicadores */}
          <Grid size= {{ xs: 12, md: 9}}>Elemento: Indicadores</Grid>
