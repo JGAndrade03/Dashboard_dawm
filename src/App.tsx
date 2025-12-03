@@ -5,9 +5,14 @@ import AlertUI from './components/AlertUI';
 import Select, { type SelectChangeEvent } from '@mui/material/Select';
 import './App.css'
 import SelectorUI from './components/SelectorUI';
+import IndicatorUI from './components/IndicatorUI';
+import useFetchData from './functions/UseFetchData';
 
 function App() {
   const [] = useState(0)
+
+  const dataFetcherOutput = useFetchData();
+
 
   return (
     
@@ -26,7 +31,40 @@ function App() {
          <Grid size= {{ xs: 12, md: 3}}><SelectorUI></SelectorUI></Grid>
 
          {/* Indicadores */}
-         <Grid size= {{ xs: 12, md: 9}}>Elemento: Indicadores</Grid>
+         <Grid size= {{ xs: 12, md: 9}}>
+            <Grid size = {{xs: 12, md: 3}}>
+                {dataFetcherOutput &&
+        (<IndicatorUI
+            title='Temperatura (2m)'
+            description={ `${dataFetcherOutput.current.temperature_2m} ${dataFetcherOutput.current_units.temperature_2m}` } />)
+    }
+            </Grid>
+            <Grid size = {{xs: 12, md: 3}}>
+              {/* IndicatorUI con la Temperatura aparente en °C' */}
+                {dataFetcherOutput &&
+        (<IndicatorUI
+            title='Temperatura aparente'
+            description={ `${dataFetcherOutput.current.apparent_temperature} ${dataFetcherOutput.current_units.apparent_temperature}` } />)
+    }
+            </Grid>
+             <Grid size={{ xs: 12, md: 3 }}>
+                     {/* IndicatorUI con la Velocidad del viento en km/h' */}
+                  {dataFetcherOutput &&
+        (<IndicatorUI
+            title='Viento en Km/h'
+            description={ `${dataFetcherOutput.current.wind_speed_10m} ${dataFetcherOutput.current_units.wind_speed_10m}` } />)
+    }
+              </Grid>
+
+              <Grid size={{ xs: 12, md: 3 }}>
+                     {/* IndicatorUI con la Humedad relativa en %' */}
+                      {dataFetcherOutput &&
+        (<IndicatorUI
+            title='Humedad Relativa'
+            description={ `${dataFetcherOutput.current.relative_humidity_2m} ${dataFetcherOutput.current_units.relative_humidity_2m}` } />)
+    }
+              </Grid>
+         </Grid>
 
          {/* Gráfico */}
          <Grid sx= {{ display: { xs: "none", md: "block"}}} >Elemento: Gráfico</Grid>
