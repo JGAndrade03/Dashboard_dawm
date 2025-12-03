@@ -25,13 +25,14 @@ function App() {
          {/* Alertas */}
          <Grid container justifyContent="right" alignItems="center">
 
-             <AlertUI description="No se preveen lluvias"/>Elemento: Alertas</Grid>
+             <AlertUI description="No se preveen lluvias"/></Grid>
 
          {/* Selector */}
          <Grid size= {{ xs: 12, md: 3}}><SelectorUI></SelectorUI></Grid>
 
          {/* Indicadores */}
          <Grid size= {{ xs: 12, md: 9}}>
+
             <Grid size = {{xs: 12, md: 3}}>
                 {dataFetcherOutput &&
         (<IndicatorUI
@@ -39,6 +40,7 @@ function App() {
             description={ `${dataFetcherOutput.current.temperature_2m} ${dataFetcherOutput.current_units.temperature_2m}` } />)
     }
             </Grid>
+
             <Grid size = {{xs: 12, md: 3}}>
               {/* IndicatorUI con la Temperatura aparente en °C' */}
                 {dataFetcherOutput &&
