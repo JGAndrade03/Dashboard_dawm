@@ -7,6 +7,8 @@ import './App.css'
 import SelectorUI from './components/SelectorUI';
 import IndicatorUI from './components/IndicatorUI';
 import useFetchData from './functions/UseFetchData';
+import TableUI from './components/TableUI';
+import ChartUI from './components/ChartUI';
 
 function App() {
   const [] = useState(0)
@@ -35,7 +37,7 @@ function App() {
          {/* Indicadores */}
          
         {!isLoading && !error && data && (
-        <Grid container size={{ xs: 12, md: 9 }}>Elemento: Indicadores
+        <Grid container size={{ xs: 12, md: 9 }}>
           <Grid size={{ xs: 12, md: 3 }}>
             <IndicatorUI title='Temperatura (2m)' 
             description={`${data.current.temperature_2m} ${data.current_units.apparent_temperature}`} />
@@ -64,10 +66,10 @@ function App() {
       )}
 
          {/* Gráfico */}
-         <Grid sx= {{ display: { xs: "none", md: "block"}}} >Elemento: Gráfico</Grid>
+         <Grid sx= {{ display: { xs: "none", md: "block"}}} ><ChartUI /></Grid>
 
          {/* Tabla */}
-         <Grid sx = {{ display: {xs: "none", md : "block"}}}>Elemento: Tabla</Grid>
+         <Grid sx = {{ display: {xs: "none", md : "block"}}}><TableUI /></Grid>
 
          {/* Información adicional */}
          <Grid>Elemento: Información adicional</Grid>
