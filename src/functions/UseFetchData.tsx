@@ -16,20 +16,23 @@ export default function useFetchData()  {
                 setIsLoading(true);
                 setError(null);
                 const response = await fetch(URL);
+
                 if(!response.ok){
                     throw new Error(`Error: ${response.statusText}`);
                 }
+
                 const result = await response.json();
                 setData(result);
-            } catch(err){
-                setError(err instanceof Error ? err.message: 'Error');
+
+            } catch(error){
+                setError(error instanceof Error ? error.message: 'Error');
             } finally{
                 setIsLoading(false);
             }
         };
         fetchData();
         
-    }, []); // El array vacío asegura que el efecto se ejecute solo una vez después del primer renderizado
+    }, []);
 
     return { data, isLoading, error};
 
