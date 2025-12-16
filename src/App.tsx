@@ -36,7 +36,7 @@ function App() {
 
          {/* Selector */}
          <Grid size= {{ xs: 12, md: 3}}><SelectorUI onOptionSelect={setSelectedOption}></SelectorUI></Grid>
-         <SelectorUI onOptionSelect={setSelectedOption} />
+    
 
          {/* Render */}
 
@@ -83,7 +83,7 @@ function App() {
          <Grid sx= {{ display: { xs: "none", md: "block"}}} ><ChartUI{...dataFetchOutput} /></Grid>
 
          {/* Tabla */}
-         <Grid sx = {{ display: {xs: "none", md : "block"}}}><TableUI /></Grid>
+         <Grid sx = {{ display: {xs: "none", md : "block"}}}><TableUI{...dataFetchOutput} /></Grid>
 
          {/* Información adicional */}
          <Grid>Elemento: Información adicional</Grid>

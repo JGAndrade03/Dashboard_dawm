@@ -18,8 +18,6 @@ export interface renderData{
 
 export default function useFetchData(selectedOption:string|null): renderData {
 
-    const  URL = 'https://api.open-meteo.com/v1/forecast?latitude=-2.1962&longitude=-79.8862&hourly=temperature_2m,wind_speed_10m&current=temperature_2m,relative_humidity_2m,wind_speed_10m,apparent_temperature';
-
     const [data, setData] = useState<OpenMeteoResponse | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const[error, setError] = useState<string | null>(null);

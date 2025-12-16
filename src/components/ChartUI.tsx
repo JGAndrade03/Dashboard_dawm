@@ -15,13 +15,13 @@ export default function ChartUI( render : renderData) {
          {render.error && <p>{render.error}</p>}
          {render.data && ( <>
          <Typography variant="h5" component="div">
-            Chart arrLabels vs arrValues1 & arrValues2
+            Hora vs Temperatura (°C) & Viento (km/h)
          </Typography>
          <LineChart
             height={300}
             series={[
-               { data: render.data.hourly.temperature_2m, label: 'value1'},
-               { data: render.data.hourly.wind_speed_10m, label: 'value2'},
+               { data: render.data.hourly.temperature_2m, label: 'Temperatura (°C)'},
+               { data: render.data.hourly.wind_speed_10m, label: 'Viento (km/h)'},
             ]}
             xAxis={[{ scaleType: 'point', data: render.data.hourly.time }]}
          />
