@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Grid } from '@mui/material';
 import HeaderUI from './components/HeaderUI';
 import AlertUI from './components/AlertUI';
-import Select, { type SelectChangeEvent } from '@mui/material/Select';
 import './App.css'
 import SelectorUI from './components/SelectorUI';
 import IndicatorUI from './components/IndicatorUI';
